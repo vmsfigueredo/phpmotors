@@ -1,0 +1,82 @@
+div.car-view{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+div.car-view div{
+    width: 100%;
+}
+
+/*  Car banner */
+div.car-banner{
+    position: relative;
+    background-image: url("../images/delorean.jpg");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 16em;
+    color: var(--dark-blue);
+}
+div .car-banner .content{
+    padding: 0 20px;
+}
+div.car-banner button{
+    position: absolute;
+    background-color: var(--dark-blue);
+    color: var(--dark-grey);
+    border: 1px solid var(--dark-grey);
+    font-size: 16pt;
+    padding: 10px 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+/* End Car Banner*/
+
+/* Car Features*/
+div.car-features{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+div.car-features div h2{
+    margin-bottom: 15px;
+}
+div.car-features .upgrades{
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+}
+div.car-features .upgrades h2{
+    width: 100%;
+}
+div.car-features .upgrades .upgrade{
+    width: calc(50% - 15px);
+    text-align: center;
+}
+div.car-features .upgrades .upgrade .img{
+    display: flex;
+    justify-content: center;
+    background-color: var(--dark-blue);
+    border: 1px solid var(--dark-grey);
+    padding: 5px;
+    height: 75px;
+}
+/* End Car Features*/
+
+@media screen and (min-width: 600px) {
+    div.car-banner{
+        height: 30em;
+    }
+    div.car-banner button{
+        position: relative;
+        left: 0;
+        transform: none;
+        margin-top: 10px;
+    }
+
+    div.car-features{
+        flex-direction: row;
+    }
+}
+

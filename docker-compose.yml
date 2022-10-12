@@ -1,0 +1,38 @@
+version: "3.8"
+volumes:
+  db-data:
+services:
+  app:
+    build:
+      context: ./.docker/app
+      dockerfile: Dockerfile
+    container_name: phpmotors_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./phpmotors:/var/www
+  webserver:
+    image: nginx:1.19-alpine
+    container_name: phpmotors_webserver
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./phpmotors:/var/www
+      - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+  db:
+    image: mysql:8.0.31
+    environment:
+      - MYSQL_DATABASE=phpmotors
+      - MYSQL_USER=vmsfig
+      - MYSQL_PASSWORD=300399aa
+      - MYSQL_ROOT_PASSWORD=secret
+
+    container_name: phpmotors_db
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql

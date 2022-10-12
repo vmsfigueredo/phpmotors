@@ -1,0 +1,132 @@
+/*  Imports  */
+
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/*  Variables  */
+
+@import "variables.css";
+
+/*  End Variables  */
+
+/*  General Styles  */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    list-style: none;
+}
+
+a {
+    color: var(--grey);
+}
+
+a:hover {
+    color: var(--dark-grey);
+}
+
+body {
+    background: url("../images/site/small_check.jpg");
+}
+
+/*  End General Styles  */
+
+/*  Main Container  */
+
+main.container {
+    overflow-x: hidden;
+    margin: 15px auto;
+    width: 95vw;
+    background-color: var(--white);
+    border-radius: 5px;
+    border: 3px solid var(--dark-blue);
+}
+
+/*  End Main Container  */
+
+
+/*  Header  */
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+/* End Header  */
+
+/*  Navigation  */
+nav {
+    background-color: var(--dark-grey);
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    font-size: .65rem;
+}
+
+nav ul li a {
+    padding: 15px;
+    display: inline-block;
+    color: var(--white);
+}
+
+nav ul li a:hover {
+    cursor: pointer;
+    background-color: var(--dark-blue);
+}
+
+nav ul li.active a {
+    cursor: pointer;
+    background-color: var(--dark-blue);
+}
+
+/* End Navigation  */
+
+/* Start Main Content */
+div.main-content {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.main-content h1 {
+    width: 100% !important;
+    font-size: 24pt;
+}
+
+/* End Main Content*/
+
+/*  Start Footer */
+footer {
+    padding: 15px;
+    border-top: 3px solid var(--dark-grey);
+    text-align: center;
+}
+
+/*  End Footer */
+/* From 600px above */
+@media screen and (min-width: 600px) {
+    main.container {
+        width: 80vw;
+    }
+
+    nav ul li {
+        font-size: 1rem;
+    }
+}
+
+/* General Classes  */
+
+.text-right {
+    text-align: right;
+}

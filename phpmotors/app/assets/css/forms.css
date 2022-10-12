@@ -1,0 +1,55 @@
+.verticalForm {
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.verticalForm .form-group {
+    width: 100%;
+}
+
+.verticalForm .form-group:not(:first-of-type) {
+    margin-top: 10px;
+}
+
+.verticalForm .form-group .form-item {
+    width: calc(100% - 20px);
+    padding: 5px 10px;
+    background-color: var(--white);
+    border-radius: 2px;
+    border: 1px solid var(--light-blue);
+}
+
+.verticalForm .form-group label {
+    position: relative;
+}
+
+.verticalForm .form-group:has(input:required) label::after {
+    content: "*Required";
+    color: #870c0c;
+    font-size: 8pt;
+    position: absolute;
+    right: -3.5rem;
+    top: 0;
+}
+
+.verticalForm .form-group .form-item:focus {
+    border: 2px solid var(--dark-blue);
+    padding: 3px 8px;
+}
+
+.verticalForm .form-group .form-submit {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: var(--light-blue);
+    border: 1px solid var(--dark-blue);
+    cursor: pointer;
+}
+
+.verticalForm .form-group .form-submit:hover {
+    filter: brightness(0.95);
+}
+
+.verticalForm .form-group .form-submit:active {
+    filter: brightness(0.9);
+}
